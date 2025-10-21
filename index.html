@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CV – Ignacy Urbańczyk • Interaktywne</title>
-  <meta name="description" content="Interaktywne CV Ignacego Urbańczyka – Project Manager / Scrum Master / AI & Automation." />
+  <meta name="description" content="Interaktywne CV Ignacego Urbańczyka – Founders Associate • AI & Automation • GTM & Ops." />
   <style>
     :root{
       --bg: #0b0f1a;
@@ -56,7 +56,7 @@
     .avatar svg{width:42px; height:42px;}
 
     h1{margin:0; font-size: clamp(24px, 4.5vw, 38px); letter-spacing:.2px;}
-    .subtitle{margin:2px 0 0; color:var(--muted); font-weight:500}
+    .subtitle{margin:2px 0 0; color:var(--muted); font-weight:600}
 
     .actions{display:flex; gap:10px; flex-wrap:wrap}
     .btn{
@@ -107,6 +107,11 @@
     .fab{width:52px; height:52px; border-radius:16px; background:linear-gradient(135deg, var(--brand), var(--brand-2)); color:white; display:grid; place-items:center; box-shadow: var(--shadow); cursor:pointer; border:none}
     .toast{position:fixed; bottom:90px; right:18px; padding:10px 14px; border-radius:12px; background:#0b1222dd; color:#e6edf6; border:1px solid rgba(255,255,255,.08); display:none}
 
+    .cards{display:grid; grid-template-columns: repeat(2, 1fr); gap:12px}
+    .mini.card{padding:14px; border-radius:16px; border:1px solid rgba(255,255,255,.14); background:linear-gradient(180deg, rgba(255,255,255,.12), rgba(255,255,255,.05));}
+    .mini.card h3{margin:6px 0 6px; font-size:15px}
+    .mini.card p{margin:0; color:var(--muted)}
+
     @media print{
       .orbs, .tools {display:none !important}
       body{background:white}
@@ -136,7 +141,7 @@
         </div>
         <div>
           <h1>Ignacy Urbańczyk</h1>
-          <div class="subtitle" data-i18n="hero.role">AI & Automation Strategist • Project Manager • Scrum Master</div>
+          <div class="subtitle" data-i18n="hero.role">Founders Associate candidate • AI Automation • GTM & Operations</div>
           <div class="actions" style="margin-top:10px">
             <a class="btn" href="mailto:ignacyurbanczyk@gmail.com" title="Napisz email">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg>
@@ -154,17 +159,19 @@
         </div>
       </div>
       <div class="brand-row" style="justify-content:flex-end; gap:8px; flex-wrap:wrap">
-        <span class="badge" title="MBTI">ENTP‑A • wizjoner • innowator</span>
-        <span class="badge">Gdynia, Polska</span>
-        <span class="badge">Otwartość na zdalnie / hybrydowo</span>
+        <span class="badge">Warszawa / Gdynia</span>
+        <span class="badge">Hybrydowo • elastyczne godziny</span>
+        <span class="badge">PL / EN (DE+ opcj.)</span>
       </div>
     </header>
 
     <div class="grid">
       <aside class="sidebar">
         <section class="tile card">
-          <h2 data-i18n="side.summary">Podsumowanie</h2>
-          <p style="margin:0; color:var(--muted); line-height:1.5" data-i18n="side.summary.text">Nie tylko zarządzam projektami — buduję rozwiązania. Łączę praktyczne podejście do AI i automatyzacji z facylitacją Agile, UX/UI oraz analityką danych, aby skracać procesy i dowozić wartość biznesową.</p>
+          <h2 data-i18n="side.summary">Profil</h2>
+          <p style="margin:0; color:var(--muted); line-height:1.6" data-i18n="side.summary.text">
+            Data‑driven operator z mentalnością foundera: AI automations, GTM i procesy. Zamieniam chaos w strukturę, automatyzuję to, co się da, a resztę upraszczam. Szukam roli Founders Associate, gdzie liczy się szybkość, własność i wynik.
+          </p>
         </section>
 
         <section class="tile card">
@@ -173,148 +180,119 @@
             <div class="row"><div class="ic">✉️</div><a href="mailto:ignacyurbanczyk@gmail.com">ignacyurbanczyk@gmail.com</a></div>
             <div class="row"><div class="ic">📞</div><a href="tel:+48881653478">+48 881 653 478</a></div>
             <div class="row"><div class="ic">🔗</div><a href="https://www.linkedin.com/in/i-urbanczyk" target="_blank" rel="noopener">linkedin.com/in/i-urbanczyk</a></div>
-            <div class="row"><div class="ic">🕸️</div><a href="https://www.igi-studio.pl" target="_blank" rel="noopener">igi-studio.pl</a></div>
-            <div class="row"><div class="ic">🛥️</div><a href="https://www.seahands.pl" target="_blank" rel="noopener">seahands.pl</a></div>
           </div>
         </section>
 
         <section class="tile card">
           <h2 data-i18n="side.skills">Kompetencje</h2>
           <div class="skills">
-            <div class="chip" data-skill="90">Agile / Scrum<div class="meter"><i></i></div></div>
-            <div class="chip" data-skill="85">Zarządzanie projektami<div class="meter"><i></i></div></div>
-            <div class="chip" data-skill="80">AI / Prompt Engineering<div class="meter"><i></i></div></div>
-            <div class="chip" data-skill="78">UX / Prototypowanie<div class="meter"><i></i></div></div>
-            <div class="chip" data-skill="76">Analityka danych<div class="meter"><i></i></div></div>
-            <div class="chip" data-skill="74">Facylitacja warsztatów<div class="meter"><i></i></div></div>
+            <div class="chip" data-skill="90">AI Automation<div class="meter"><i></i></div></div>
+            <div class="chip" data-skill="88">GTM & Sales Ops<div class="meter"><i></i></div></div>
+            <div class="chip" data-skill="86">Process Optimization<div class="meter"><i></i></div></div>
+            <div class="chip" data-skill="84">Project Management<div class="meter"><i></i></div></div>
+            <div class="chip" data-skill="82">Financial Modeling<div class="meter"><i></i></div></div>
+            <div class="chip" data-skill="80">Data & Dashboards<div class="meter"><i></i></div></div>
           </div>
         </section>
 
         <section class="tile card">
           <h2 data-i18n="side.languages">Języki</h2>
           <div class="lang">
-            <span class="badge">Polski – ojczysty</span>
+            <span class="badge">Polski – native</span>
             <span class="badge">Angielski – C1</span>
-            <span class="badge">Niemiecki – A1</span>
+            <span class="badge">Hiszpański – B1</span>
           </div>
         </section>
 
         <section class="tile card">
-          <h2 data-i18n="side.certs">Certyfikaty</h2>
+          <h2 data-i18n="side.certs">Edu & Certyfikaty</h2>
           <ul style="margin:0; padding-left:18px; color:var(--muted)">
-            <li>Professional Scrum Master I (PSM I)</li>
+            <li><b>SGH</b> – Magister, Supply Chain Management / E‑Business</li>
+            <li><b>ALK (Koźmiński)</b> – Licencjat, Zarządzanie</li>
+            <li>PSM I (Scrum)</li>
             <li>PRINCE2® Practitioner</li>
-            <li>LCCI Business Language Certificate</li>
           </ul>
         </section>
       </aside>
 
       <main class="main">
         <section class="section card">
-          <h2 data-i18n="exp.title">Doświadczenie</h2>
+          <h2 data-i18n="exp.title">Doświadczenie (0→1, AI, Ops)</h2>
           <div class="filters">
             <button class="filter active" data-filter="all" data-i18n="exp.filters.all">Wszystko</button>
-            <button class="filter" data-filter="banking" data-i18n="exp.filters.banking">Bankowość</button>
-            <button class="filter" data-filter="energy" data-i18n="exp.filters.energy">Energetyka</button>
-            <button class="filter" data-filter="fnb" data-i18n="exp.filters.fnb">Food & Beverage</button>
-            <button class="filter" data-filter="electronics" data-i18n="exp.filters.electronics">Sprzęt elektryczny</button>
+            <button class="filter" data-filter="ai">AI / Automation</button>
+            <button class="filter" data-filter="ops">Ops / GTM</button>
+            <button class="filter" data-filter="corp">Enterprise</button>
           </div>
           <div class="timeline" id="timeline">
-            <article class="item" data-cat="banking">
-              <div class="top"><span class="pill">Accenture • Prompt Engineer / UX/UI / Data Analyst</span><span class="when">VIII 2023 – VI 2025 • Bankowość</span></div>
-              <details>
-                <summary>AI w aplikacjach bankowych: +12% satysfakcji użytkowników</summary>
+            <article class="item" data-cat="ai">
+              <div class="top"><span class="pill">Founder / AI & Automation Consultant — igi.studio | SeaHands</span><span class="when">2024 – 2025</span></div>
+              <details open>
+                <summary>Automatyzacje i GTM: −60% manualnej pracy</summary>
                 <ul>
-                  <li>Projektowanie i optymalizacja rozwiązań AI w aplikacjach bankowych.</li>
-                  <li>Makiety i prototypy w Figma/Sketch, usprawnienia UX/UI.</li>
-                  <li>Power BI – analizy trendów, skrócenie czasu decyzji o 20%.</li>
+                  <li>Budowa workflowów AI (Make, Manychat, GPT, ElevenLabs) – automatyzacja komunikacji i raportów.</li>
+                  <li>GTM i pricing dla marek B2B/FnB/marine; wdrożenie CRM i lejków.</li>
+                  <li>SeaHands – marka usług jachtowych: operacje, marketing, automatyzacje 0→1.</li>
+                  <li>Dashboardy KPI i procesy – metryki do decyzji, lepsza konwersja i retencja.</li>
                 </ul>
               </details>
-              <div class="tags"><span class="tag">GenAI</span><span class="tag">Figma</span><span class="tag">Power BI</span><span class="tag">A/B</span></div>
+              <div class="tags"><span class="tag">Automation</span><span class="tag">GTM</span><span class="tag">Dashboards</span><span class="tag">B2B</span></div>
             </article>
 
-            <article class="item" data-cat="energy">
-              <div class="top"><span class="pill">Accenture • Project Manager</span><span class="when">I 2023 – VII 2023 • Energetyka</span></div>
+            <article class="item" data-cat="corp">
+              <div class="top"><span class="pill">AI & Innovation Project Lead — Accenture (Banking & IT)</span><span class="when">2023 – 2024</span></div>
               <details>
-                <summary>Chatbot dla MS Teams: −30% czasu integracji</summary>
+                <summary>Chatboty i procesy: +30% KPI</summary>
                 <ul>
-                  <li>Prowadzenie rozwoju bota wewnętrznego (Teams).</li>
-                  <li>Podnoszenie dojrzałości Agile i budowa zespołu.</li>
-                  <li>Monitoring postępów, testy i iteracyjne ulepszenia.</li>
+                  <li>Projektowanie i wdrożenia chatbotów oraz automatyzacji dla bankowości.</li>
+                  <li>UX/analiza danych; raportowanie, dashboardy, sprint management.</li>
+                  <li>Facylitacja zwinna i dostarczanie “on time”.</li>
                 </ul>
               </details>
-              <div class="tags"><span class="tag">Teams</span><span class="tag">Roadmap</span><span class="tag">Agile</span></div>
+              <div class="tags"><span class="tag">AI</span><span class="tag">UX</span><span class="tag">Agile</span></div>
             </article>
 
-            <article class="item" data-cat="electronics">
-              <div class="top"><span class="pill">Accenture • Scrum Master</span><span class="when">VIII 2022 – III 2023 • Sprzęt elektryczny</span></div>
+            <article class="item" data-cat="ops">
+              <div class="top"><span class="pill">Founder’s Associate (freelance scope)</span><span class="when">2022 – 2023</span></div>
               <details>
-                <summary>Refaktoryzacja produktu: +25% szybkości w Scrum</summary>
+                <summary>0→1 wsparcie founderów: research, finanse, decki</summary>
                 <ul>
-                  <li>Dostarczenie projektu refaktoryzacji zgodnie ze Scrum.</li>
-                  <li>Współtworzenie roadmapy transformacji Agile i VSM.</li>
-                  <li>Facylitacja komunikacji i rozwiązywanie konfliktów.</li>
+                  <li>Walidacje rynku, modele finansowe, materiały dla inwestorów.</li>
+                  <li>Procesy operacyjne i pierwsze automatyzacje.</li>
                 </ul>
               </details>
-              <div class="tags"><span class="tag">Scrum</span><span class="tag">VSM</span><span class="tag">Transformacja</span></div>
-            </article>
-
-            <article class="item" data-cat="fnb">
-              <div class="top"><span class="pill">Accenture • PM & Scrum Master</span><span class="when">VIII 2022 – II 2023 • Food & Beverage</span></div>
-              <details>
-                <summary>Warsztaty Unit Testing: +18% efektywności</summary>
-                <ul>
-                  <li>12+ warsztatów z testów jednostkowych.</li>
-                  <li>Planowanie sprintów i definiowanie dostarczanych wartości.</li>
-                  <li>Budżet, harmonogram, zasoby – dowożenie na czas.</li>
-                </ul>
-              </details>
-              <div class="tags"><span class="tag">QA</span><span class="tag">Scrum</span><span class="tag">PMO</span></div>
+              <div class="tags"><span class="tag">Finance</span><span class="tag">Ops</span><span class="tag">Decks</span></div>
             </article>
           </div>
         </section>
 
         <section class="section card">
-          <h2 data-i18n="stack.title">Tech & Narzędzia</h2>
+          <h2>Projekty (wybrane)</h2>
           <div class="cards">
-            <div class="mini card"><h3>Metodyki</h3><p style="color:var(--muted)">Agile / Scrum (PSM I), PRINCE2®, Kanban</p></div>
-            <div class="mini card"><h3>Narzędzia PM</h3><p style="color:var(--muted)">Jira, Azure DevOps, Confluence</p></div>
-            <div class="mini card"><h3>Projektowanie</h3><p style="color:var(--muted)">Figma, Sketch</p></div>
-            <div class="mini card"><h3>Data</h3><p style="color:var(--muted)">Power BI</p></div>
+            <div class="mini card"><h3>PharmBot</h3><p>Voice AI (ElevenLabs + Docker + CSV) do informacji o dostępności i cenach leków.</p></div>
+            <div class="mini card"><h3>AutoReach.AI</h3><p>MVP asystenta kontaktowego B2B (no‑code + AI) – oszczędność godzin prospectingu.</p></div>
+            <div class="mini card"><h3>SeaHands Gear – KiteShell</h3><p>Innowacja HW dla sportów wiatrowych (concept → prototype, dwa mechanizmy konstrukcyjne).</p></div>
+            <div class="mini card"><h3>PrimaPRO (Primagran)</h3><p>Lejek B2B dla projektantów wnętrz – wzrost konwersji i jakości leadów.</p></div>
           </div>
         </section>
 
         <section class="section card">
-          <h2 data-i18n="edu.title">Edukacja</h2>
+          <h2>Achievements & Metrics</h2>
           <div class="cards">
-            <div class="mini card"><h3>SGH – Magister (E‑commerce)</h3><p style="color:var(--muted)">2021 – 2023</p></div>
-            <div class="mini card"><h3>ALK – Licencjat z ekonomii</h3><p style="color:var(--muted)">2016 – 2020</p></div>
+            <div class="mini card"><h3>Automations</h3><p>5+ kluczowych workflowów • do −60% pracy manualnej.</p></div>
+            <div class="mini card"><h3>0→1 Launches</h3><p>3 brandy/produkty uruchomione od zera (AI, B2B, marine).</p></div>
+            <div class="mini card"><h3>Systems</h3><p>>10 systemów automatyzacji i raportowania u klientów.</p></div>
+            <div class="mini card"><h3>Conversion</h3><p>Lejki marketingowe: do +40% CR (projekty wybrane).</p></div>
           </div>
         </section>
 
         <section class="section card">
-          <h2 data-i18n="projects.title">Projekty i osiągnięcia</h2>
+          <h2>Dlaczego Mimira</h2>
           <div class="cards">
-            <div class="mini card">
-              <h3>IGI Studio</h3>
-              <p style="color:var(--muted)">Responsywne strony i aplikacje dla 20+ klientów. HTML/CSS/JS/React, unikalne koncepty UX/UI.</p>
-            </div>
-            <div class="mini card">
-              <h3>SeaHands</h3>
-              <p style="color:var(--muted)">50+ czarterów jachtów, wdrożenia CRM, zarządzanie stroną WordPress.</p>
-            </div>
-            <div class="mini card">
-              <h3>Prototypy</h3>
-              <p style="color:var(--muted)">Plecak do kiteboardingu i inne innowacyjne akcesoria sportowe; no‑code apps (np. to interaktywne CV, Lendly).</p>
-            </div>
-            <div class="mini card">
-              <h3>Startup Academy – Finalista</h3>
-              <p style="color:var(--muted)">Projekt QR MENU (2020).</p>
-            </div>
-            <div class="mini card">
-              <h3>Odyssey of the Mind – Mistrz Świata</h3>
-              <p style="color:var(--muted)">2014 – kreatywne rozwiązywanie problemów.</p>
-            </div>
+            <div class="mini card"><h3>Analytical → Action</h3><p>Dane → wniosek → wynik. Decyzje oparte na metrykach.</p></div>
+            <div class="mini card"><h3>Automation‑first</h3><p>Każdą nieefektywność traktuję jak bug do naprawy.</p></div>
+            <div class="mini card"><h3>Founder mindset</h3><p>Własność wyniku, szybkość, dowożenie bez wymówek.</p></div>
+            <div class="mini card"><h3>Impact</h3><p>Złożoność zamieniam w skalowalną strukturę.</p></div>
           </div>
         </section>
       </main>
@@ -383,43 +361,29 @@
     // Accessibility: open all details on print
     window.addEventListener('beforeprint', ()=> document.querySelectorAll('details').forEach(d=> d.open=true));
 
-    // I18n – proste tłumaczenia UI
+    // I18n – proste tłumaczenia UI (zaktualizowane klucze)
     const dict = {
       pl: {
-        'hero.role': 'AI & Automation Strategist • Project Manager • Scrum Master',
-        'side.summary': 'Podsumowanie',
-        'side.summary.text': 'Nie tylko zarządzam projektami — buduję rozwiązania. Łączę praktyczne podejście do AI i automatyzacji z facylitacją Agile, UX/UI oraz analityką danych, aby skracać procesy i dowozić wartość biznesową.',
+        'hero.role': 'Kandydat na Founders Associate • Automatyzacje AI • GTM i Operacje',
+        'side.summary': 'Profil',
+        'side.summary.text': 'Data‑driven operator z mentalnością foundera: AI automations, GTM i procesy. Zamieniam chaos w strukturę, automatyzuję to, co się da, a resztę upraszczam. Szukam roli Founders Associate, gdzie liczy się szybkość, własność i wynik.',
         'side.contact': 'Kontakt',
         'side.skills': 'Kompetencje',
         'side.languages': 'Języki',
-        'side.certs': 'Certyfikaty',
-        'exp.title': 'Doświadczenie',
-        'exp.filters.all': 'Wszystko',
-        'exp.filters.banking': 'Bankowość',
-        'exp.filters.energy': 'Energetyka',
-        'exp.filters.fnb': 'Food & Beverage',
-        'exp.filters.electronics': 'Sprzęt elektryczny',
-        'stack.title': 'Tech & Narzędzia',
-        'projects.title': 'Projekty i osiągnięcia',
-        'edu.title': 'Edukacja'
+        'side.certs': 'Edu & Certyfikaty',
+        'exp.title': 'Doświadczenie (0→1, AI, Ops)',
+        'exp.filters.all': 'Wszystko'
       },
       en: {
-        'hero.role': 'AI & Automation Strategist • Project Manager • Scrum Master',
-        'side.summary': 'Summary',
-        'side.summary.text': 'I don’t just manage projects—I build solutions. I combine practical AI & automation with Agile facilitation, UX/UI and data analytics to shorten processes and deliver business value.',
+        'hero.role': 'Founders Associate candidate • AI Automation • GTM & Operations',
+        'side.summary': 'Profile',
+        'side.summary.text': 'Data‑driven operator with founder mindset: AI automations, GTM and operations. I turn chaos into structure, automate what can be automated, and simplify the rest. Looking for a Founders Associate role where speed, ownership and outcomes matter.',
         'side.contact': 'Contact',
         'side.skills': 'Skills',
         'side.languages': 'Languages',
-        'side.certs': 'Certificates',
-        'exp.title': 'Experience',
-        'exp.filters.all': 'All',
-        'exp.filters.banking': 'Banking',
-        'exp.filters.energy': 'Energy',
-        'exp.filters.fnb': 'Food & Beverage',
-        'exp.filters.electronics': 'Electrical Equipment',
-        'stack.title': 'Tech & Tools',
-        'projects.title': 'Projects & Achievements',
-        'edu.title': 'Education'
+        'side.certs': 'Education & Certificates',
+        'exp.title': 'Experience (0→1, AI, Ops)',
+        'exp.filters.all': 'All'
       }
     };
     function setLang(l){
