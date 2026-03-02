@@ -1,403 +1,280 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CV – Ignacy Urbańczyk • Interaktywne</title>
-  <meta name="description" content="Interaktywne CV Ignacego Urbańczyka – Founders Associate • AI & Automation • GTM & Ops." />
-  <style>
-    :root{
-      --bg: #0b0f1a;
-      --bg-2:#0f1424;
-      --card:#101726cc;
-      --text:#e6edf6;
-      --muted:#a7b0c3;
-      --brand:#7c3aed; /* fiolet */
-      --brand-2:#22d3ee; /* cyjan */
-      --ok:#10b981;
-      --warn:#f59e0b;
-      --danger:#ef4444;
-      --glass: blur(12px) saturate(1.2);
-      --radius: 22px;
-      --ring: 0 0 0 1px rgba(255,255,255,.08) inset, 0 10px 25px rgba(0,0,0,.35);
-      --shadow: 0 12px 28px rgba(0,0,0,.45), 0 2px 6px rgba(0,0,0,.2);
-    }
-    .light{
-      --bg:#f7f8fb; --bg-2:#eef1f7; --card:#ffffffcc; --text:#0e1320; --muted:#4a5568;
-      --ring: 0 0 0 1px rgba(0,0,0,.05) inset, 0 8px 20px rgba(0,0,0,.08);
-      --shadow: 0 8px 20px rgba(0,0,0,.12), 0 2px 6px rgba(0,0,0,.06);
-    }
-
-    html,body{height:100%;}
-    body{
-      margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Inter", "Helvetica Neue", Arial, Noto Sans, "Apple Color Emoji", "Segoe UI Emoji";
-      background: radial-gradient(1200px 800px at 10% 10%, #1a1f33 0%, transparent 70%),
-                  radial-gradient(900px 600px at 90% 10%, #1a1633 0%, transparent 70%),
-                  radial-gradient(1200px 700px at 50% 100%, #0f1b2e 0%, transparent 70%),
-                  var(--bg);
-      color: var(--text);
-      overflow-x:hidden;
-    }
-
-    .orbs{position:fixed; inset:0; pointer-events:none; z-index:0; filter: blur(60px) saturate(140%);} 
-    .orb{position:absolute; width:520px; height:520px; border-radius:50%; opacity:.45; mix-blend:screen;}
-    .orb.a{ background: radial-gradient(circle at 30% 30%, var(--brand), transparent 60%); left:-120px; top:-120px; animation: float 18s ease-in-out infinite;}
-    .orb.b{ background: radial-gradient(circle at 70% 30%, var(--brand-2), transparent 60%); right:-140px; top:-160px; animation: float 22s ease-in-out infinite reverse;}
-    .orb.c{ background: radial-gradient(circle at 50% 70%, #0ea5e9, transparent 60%); left:40%; bottom:-200px; animation: float 26s ease-in-out infinite;}
-    @keyframes float{0%,100%{transform:translate3d(0,0,0)}50%{transform:translate3d(0,-30px,0)}}
-
-    .wrap{position:relative; z-index:1; max-width:1100px; margin: 24px auto 120px; padding: 0 20px;}
-
-    header.hero{position:relative; display:grid; grid-template-columns: 1fr auto; gap:24px; align-items:center;}
-    .card{background: var(--card); backdrop-filter: var(--glass); -webkit-backdrop-filter: var(--glass); border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid rgba(255,255,255,.06);}
-
-    .brand-row{display:flex; align-items:center; gap:16px; padding:18px 20px;}
-    .avatar{width:74px; height:74px; border-radius:20px; background: linear-gradient(135deg, var(--brand), var(--brand-2)); display:grid; place-items:center; color:white; box-shadow: var(--ring);}    
-    .avatar svg{width:42px; height:42px;}
-
-    h1{margin:0; font-size: clamp(24px, 4.5vw, 38px); letter-spacing:.2px;}
-    .subtitle{margin:2px 0 0; color:var(--muted); font-weight:600}
-
-    .actions{display:flex; gap:10px; flex-wrap:wrap}
-    .btn{
-      display:inline-flex; align-items:center; gap:10px; padding:10px 14px; border-radius:14px; border:1px solid rgba(255,255,255,.08); background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)); color:var(--text); cursor:pointer; box-shadow: var(--ring); text-decoration:none; font-weight:600; transition:.2s transform ease;
-    }
-    .btn:hover{transform: translateY(-2px)}
-    .btn svg{width:18px; height:18px}
-
-    .lang-switch{position:absolute; right:14px; top:12px; display:flex; gap:8px}
-    .lang-switch .btn{padding:6px 10px}
-
-    .grid{display:grid; grid-template-columns: 320px 1fr; gap:24px; margin-top:18px}
-    @media (max-width: 980px){ .grid{grid-template-columns: 1fr}}    
-
-    .sidebar{display:grid; gap:18px; align-content:start}
-    .tile{padding:16px;}
-    .icon-list{display:grid; grid-template-columns: 1fr; gap:12px}
-    .row{display:flex; align-items:center; gap:12px}
-    .ic{width:36px; height:36px; border-radius:12px; display:grid; place-items:center; background:linear-gradient(135deg, rgba(124,58,237,.25), rgba(34,211,238,.2)); border:1px solid rgba(255,255,255,.08)}
-    .row a, .row span{color:var(--text); text-decoration:none}
-
-    .skills{display:grid; grid-template-columns: 1fr 1fr; gap:14px}
-    .chip{display:flex; align-items:center; justify-content:space-between; gap:8px; padding:10px 12px; border-radius:12px; border:1px solid rgba(255,255,255,.08); background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));}
-    .meter{height:8px; border-radius:99px; background:rgba(255,255,255,.08); overflow:hidden; flex:1; margin-left:10px}
-    .meter > i{display:block; height:100%; width:0%; background: linear-gradient(90deg, var(--brand), var(--brand-2)); transition: width .8s ease}
-
-    .lang{display:flex; gap:8px; flex-wrap:wrap}
-    .badge{padding:8px 10px; border-radius:40px; background:linear-gradient(90deg, rgba(124,58,237,.15), rgba(34,211,238,.12)); border:1px solid rgba(255,255,255,.1); font-weight:600}
-
-    .main{display:grid; gap:18px}
-    .section{padding:18px 18px 6px}
-    .section h2{margin:0 0 12px; font-size:18px; letter-spacing:.3px; text-transform:uppercase; color:#ffffff; text-shadow:0 1px 2px rgba(0,0,0,.35)}
-
-    .timeline{position:relative; display:grid; gap:14px;}
-    .item{position:relative; padding:14px; border-radius:16px; border:1px solid rgba(255,255,255,.14); background:linear-gradient(180deg, rgba(255,255,255,.12), rgba(255,255,255,.05));}
-    .item:hover{box-shadow:0 6px 18px rgba(0,0,0,.25)}
-    .item .top{display:flex; flex-wrap:wrap; align-items:center; gap:10px;}
-    .pill{padding:6px 10px; border-radius:12px; background:rgba(124,58,237,.28); border:1px solid rgba(124,58,237,.45); font-weight:700; font-size:12px; letter-spacing:.3px}
-    .when{margin-left:auto; color:var(--muted); font-weight:600}
-    .tags{display:flex; flex-wrap:wrap; gap:8px; margin-top:8px}
-    .tag{padding:6px 10px; border-radius:999px; background:rgba(34,211,238,.22); border:1px solid rgba(34,211,238,.45); font-weight:600; font-size:12px}
-
-    .filters{display:flex; gap:8px; flex-wrap:wrap; margin: 4px 0 12px}
-    .filter{padding:8px 12px; border-radius:999px; border:1px solid rgba(255,255,255,.22); background:rgba(255,255,255,.10); cursor:pointer; font-weight:700; color:var(--text); box-shadow: inset 0 0 0 1px rgba(0,0,0,.2)}
-    .filter.active{background:linear-gradient(90deg, rgba(124,58,237,.45), rgba(34,211,238,.42)); border-color: rgba(255,255,255,.6)}
-
-    .tools{position: fixed; right: 18px; bottom: 18px; display: grid; gap: 10px; z-index: 2;}
-    .fab{width:52px; height:52px; border-radius:16px; background:linear-gradient(135deg, var(--brand), var(--brand-2)); color:white; display:grid; place-items:center; box-shadow: var(--shadow); cursor:pointer; border:none}
-    .toast{position:fixed; bottom:90px; right:18px; padding:10px 14px; border-radius:12px; background:#0b1222dd; color:#e6edf6; border:1px solid rgba(255,255,255,.08); display:none}
-
-    .cards{display:grid; grid-template-columns: repeat(2, 1fr); gap:12px}
-    .mini.card{padding:14px; border-radius:16px; border:1px solid rgba(255,255,255,.14); background:linear-gradient(180deg, rgba(255,255,255,.12), rgba(255,255,255,.05));}
-    .mini.card h3{margin:6px 0 6px; font-size:15px}
-    .mini.card p{margin:0; color:var(--muted)}
-
-    @media print{
-      .orbs, .tools {display:none !important}
-      body{background:white}
-      .card{box-shadow:none}
-      a{color:#111}
-    }
-  </style>
-</head>
-<body>
-  <div class="orbs" aria-hidden="true">
-    <div class="orb a"></div>
-    <div class="orb b"></div>
-    <div class="orb c"></div>
-  </div>
-
-  <div class="wrap">
-    <header class="hero card">
-      <div class="lang-switch">
-        <button class="btn" id="langPL" data-lang="pl">PL</button>
-        <button class="btn" id="langEN" data-lang="en">EN</button>
-      </div>
-      <div class="brand-row">
-        <div class="avatar" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M3 17l4-10 4 10M19 17V7l-4 6-4-6v10"/>
-          </svg>
-        </div>
-        <div>
-          <h1>Ignacy Urbańczyk</h1>
-          <div class="subtitle" data-i18n="hero.role">Founders Associate candidate • AI Automation • GTM & Operations</div>
-          <div class="actions" style="margin-top:10px">
-            <a class="btn" href="mailto:ignacyurbanczyk@gmail.com" title="Napisz email">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg>
-              ignacyurbanczyk@gmail.com
-            </a>
-            <a class="btn" href="tel:+48881653478" title="Zadzwoń">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 6.18 2 2 0 0 1 4.11 4h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8.09 11a16 16 0 0 0 6 6l.54-1.19a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z"/></svg>
-              +48 881 653 478
-            </a>
-            <a class="btn" href="https://www.linkedin.com/in/i-urbanczyk" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V24h-4V8zm7.5 0h3.8v2.2h.1c.5-1 1.8-2.2 3.7-2.2 4 0 4.7 2.6 4.7 6V24h-4v-5.3c0-1.3 0-3-1.9-3s-2.1 1.5-2.1 2.9V24h-4V8z"/></svg>
-              LinkedIn
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="brand-row" style="justify-content:flex-end; gap:8px; flex-wrap:wrap">
-        <span class="badge">Warszawa / Gdynia</span>
-        <span class="badge">Hybrydowo • elastyczne godziny</span>
-        <span class="badge">PL / EN (DE+ opcj.)</span>
-      </div>
-    </header>
-
-    <div class="grid">
-      <aside class="sidebar">
-        <section class="tile card">
-          <h2 data-i18n="side.summary">Profil</h2>
-          <p style="margin:0; color:var(--muted); line-height:1.6" data-i18n="side.summary.text">
-            Data‑driven operator z mentalnością foundera: AI automations, GTM i procesy. Zamieniam chaos w strukturę, automatyzuję to, co się da, a resztę upraszczam. Szukam roli Founders Associate, gdzie liczy się szybkość, własność i wynik.
-          </p>
-        </section>
-
-        <section class="tile card">
-          <h2 data-i18n="side.contact">Kontakt</h2>
-          <div class="icon-list">
-            <div class="row"><div class="ic">✉️</div><a href="mailto:ignacyurbanczyk@gmail.com">ignacyurbanczyk@gmail.com</a></div>
-            <div class="row"><div class="ic">📞</div><a href="tel:+48881653478">+48 881 653 478</a></div>
-            <div class="row"><div class="ic">🔗</div><a href="https://www.linkedin.com/in/i-urbanczyk" target="_blank" rel="noopener">linkedin.com/in/i-urbanczyk</a></div>
-          </div>
-        </section>
-
-        <section class="tile card">
-          <h2 data-i18n="side.skills">Kompetencje</h2>
-          <div class="skills">
-            <div class="chip" data-skill="90">AI Automation<div class="meter"><i></i></div></div>
-            <div class="chip" data-skill="88">GTM & Sales Ops<div class="meter"><i></i></div></div>
-            <div class="chip" data-skill="86">Process Optimization<div class="meter"><i></i></div></div>
-            <div class="chip" data-skill="84">Project Management<div class="meter"><i></i></div></div>
-            <div class="chip" data-skill="82">Financial Modeling<div class="meter"><i></i></div></div>
-            <div class="chip" data-skill="80">Data & Dashboards<div class="meter"><i></i></div></div>
-          </div>
-        </section>
-
-        <section class="tile card">
-          <h2 data-i18n="side.languages">Języki</h2>
-          <div class="lang">
-            <span class="badge">Polski – native</span>
-            <span class="badge">Angielski – C1</span>
-            <span class="badge">Hiszpański – B1</span>
-          </div>
-        </section>
-
-        <section class="tile card">
-          <h2 data-i18n="side.certs">Edu & Certyfikaty</h2>
-          <ul style="margin:0; padding-left:18px; color:var(--muted)">
-            <li><b>SGH</b> – Magister, Supply Chain Management / E‑Business</li>
-            <li><b>ALK (Koźmiński)</b> – Licencjat, Zarządzanie</li>
-            <li>PSM I (Scrum)</li>
-            <li>PRINCE2® Practitioner</li>
-          </ul>
-        </section>
-      </aside>
-
-      <main class="main">
-        <section class="section card">
-          <h2 data-i18n="exp.title">Doświadczenie (0→1, AI, Ops)</h2>
-          <div class="filters">
-            <button class="filter active" data-filter="all" data-i18n="exp.filters.all">Wszystko</button>
-            <button class="filter" data-filter="ai">AI / Automation</button>
-            <button class="filter" data-filter="ops">Ops / GTM</button>
-            <button class="filter" data-filter="corp">Enterprise</button>
-          </div>
-          <div class="timeline" id="timeline">
-            <article class="item" data-cat="ai">
-              <div class="top"><span class="pill">Founder / AI & Automation Consultant — igi.studio | SeaHands</span><span class="when">2024 – 2025</span></div>
-              <details open>
-                <summary>Automatyzacje i GTM: −60% manualnej pracy</summary>
-                <ul>
-                  <li>Budowa workflowów AI (Make, Manychat, GPT, ElevenLabs) – automatyzacja komunikacji i raportów.</li>
-                  <li>GTM i pricing dla marek B2B/FnB/marine; wdrożenie CRM i lejków.</li>
-                  <li>SeaHands – marka usług jachtowych: operacje, marketing, automatyzacje 0→1.</li>
-                  <li>Dashboardy KPI i procesy – metryki do decyzji, lepsza konwersja i retencja.</li>
-                </ul>
-              </details>
-              <div class="tags"><span class="tag">Automation</span><span class="tag">GTM</span><span class="tag">Dashboards</span><span class="tag">B2B</span></div>
-            </article>
-
-            <article class="item" data-cat="corp">
-              <div class="top"><span class="pill">AI & Innovation Project Lead — Accenture (Banking & IT)</span><span class="when">2023 – 2024</span></div>
-              <details>
-                <summary>Chatboty i procesy: +30% KPI</summary>
-                <ul>
-                  <li>Projektowanie i wdrożenia chatbotów oraz automatyzacji dla bankowości.</li>
-                  <li>UX/analiza danych; raportowanie, dashboardy, sprint management.</li>
-                  <li>Facylitacja zwinna i dostarczanie “on time”.</li>
-                </ul>
-              </details>
-              <div class="tags"><span class="tag">AI</span><span class="tag">UX</span><span class="tag">Agile</span></div>
-            </article>
-
-            <article class="item" data-cat="ops">
-              <div class="top"><span class="pill">Founder’s Associate (freelance scope)</span><span class="when">2022 – 2023</span></div>
-              <details>
-                <summary>0→1 wsparcie founderów: research, finanse, decki</summary>
-                <ul>
-                  <li>Walidacje rynku, modele finansowe, materiały dla inwestorów.</li>
-                  <li>Procesy operacyjne i pierwsze automatyzacje.</li>
-                </ul>
-              </details>
-              <div class="tags"><span class="tag">Finance</span><span class="tag">Ops</span><span class="tag">Decks</span></div>
-            </article>
-          </div>
-        </section>
-
-        <section class="section card">
-          <h2>Projekty (wybrane)</h2>
-          <div class="cards">
-            <div class="mini card"><h3>PharmBot</h3><p>Voice AI (ElevenLabs + Docker + CSV) do informacji o dostępności i cenach leków.</p></div>
-            <div class="mini card"><h3>AutoReach.AI</h3><p>MVP asystenta kontaktowego B2B (no‑code + AI) – oszczędność godzin prospectingu.</p></div>
-            <div class="mini card"><h3>SeaHands Gear – KiteShell</h3><p>Innowacja HW dla sportów wiatrowych (concept → prototype, dwa mechanizmy konstrukcyjne).</p></div>
-            <div class="mini card"><h3>PrimaPRO (Primagran)</h3><p>Lejek B2B dla projektantów wnętrz – wzrost konwersji i jakości leadów.</p></div>
-          </div>
-        </section>
-
-        <section class="section card">
-          <h2>Achievements & Metrics</h2>
-          <div class="cards">
-            <div class="mini card"><h3>Automations</h3><p>5+ kluczowych workflowów • do −60% pracy manualnej.</p></div>
-            <div class="mini card"><h3>0→1 Launches</h3><p>3 brandy/produkty uruchomione od zera (AI, B2B, marine).</p></div>
-            <div class="mini card"><h3>Systems</h3><p>>10 systemów automatyzacji i raportowania u klientów.</p></div>
-            <div class="mini card"><h3>Conversion</h3><p>Lejki marketingowe: do +40% CR (projekty wybrane).</p></div>
-          </div>
-        </section>
-
-        <section class="section card">
-          <h2>Dlaczego Mimira</h2>
-          <div class="cards">
-            <div class="mini card"><h3>Analytical → Action</h3><p>Dane → wniosek → wynik. Decyzje oparte na metrykach.</p></div>
-            <div class="mini card"><h3>Automation‑first</h3><p>Każdą nieefektywność traktuję jak bug do naprawy.</p></div>
-            <div class="mini card"><h3>Founder mindset</h3><p>Własność wyniku, szybkość, dowożenie bez wymówek.</p></div>
-            <div class="mini card"><h3>Impact</h3><p>Złożoność zamieniam w skalowalną strukturę.</p></div>
-          </div>
-        </section>
-      </main>
-    </div>
-  </div>
-
-  <div class="tools">
-    <button class="fab" id="themeBtn" title="Przełącz motyw" aria-label="Przełącz motyw">
-      <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v2m0 14v2m9-9h-2M5 12H3m14.95 6.95l-1.41-1.41M7.46 7.46 6.05 6.05m10.49 0-1.41 1.41M7.46 16.54 6.05 17.95"/></svg>
-    </button>
-    <button class="fab" id="printBtn" title="Drukuj / zapisz PDF" aria-label="Drukuj">
-      <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v8H6z"/></svg>
-    </button>
-    <button class="fab" id="copyBtn" title="Kopiuj e‑mail" aria-label="Kopiuj e‑mail">
-      <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="9" y="9" width="13" height="13" rx="2"/><rect x="2" y="2" width="13" height="13" rx="2"/></svg>
-    </button>
-    <div class="toast" id="toast">Skopiowano do schowka ✨</div>
-  </div>
-
-  <script>
-    // Theme toggle
-    const themeBtn = document.getElementById('themeBtn');
-    const savedTheme = localStorage.getItem('theme');
-    if(savedTheme === 'light'){ document.body.classList.add('light'); }
-    themeBtn.addEventListener('click', ()=>{
-      document.body.classList.toggle('light');
-      localStorage.setItem('theme', document.body.classList.contains('light') ? 'light' : 'dark');
-    });
-
-    // Print
-    document.getElementById('printBtn').addEventListener('click', ()=> window.print());
-
-    // Copy email toast
-    const toast = document.getElementById('toast');
-    document.getElementById('copyBtn').addEventListener('click', async ()=>{
-      try{ await navigator.clipboard.writeText('ignacyurbanczyk@gmail.com'); toast.style.display='block'; setTimeout(()=> toast.style.display='none', 1600);}catch(e){ alert('Skopiuj ręcznie: ignacyurbanczyk@gmail.com'); }
-    });
-
-    // Filters on timeline
-    const filters = document.querySelectorAll('.filter');
-    const items = document.querySelectorAll('.timeline .item');
-    filters.forEach(btn=> btn.addEventListener('click', ()=>{
-      filters.forEach(b=> b.classList.remove('active'));
-      btn.classList.add('active');
-      const cat = btn.dataset.filter;
-      items.forEach(it=>{
-        it.style.display = (cat==='all' || it.dataset.cat===cat) ? 'block' : 'none';
-      });
-    }));
-
-    // Animate meters on view
-    const obs = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{
-        if(e.isIntersecting){
-          e.target.querySelectorAll('.meter > i').forEach(bar=>{
-            const parent = bar.closest('.chip');
-            const val = parent?.dataset?.skill || 70;
-            requestAnimationFrame(()=> bar.style.width = val + '%');
-          });
-          obs.unobserve(e.target);
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ignacy Urbańczyk | AI Strategy & R&D Leader</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #030712;
+            color: #f3f4f6;
         }
-      });
-    }, { threshold: .3 });
-    document.querySelectorAll('.skills').forEach(s=> obs.observe(s));
+        .glass-card {
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            border-color: #6366f1;
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px -10px rgba(99, 102, 241, 0.3);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #818cf8 0%, #c084fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+        }
+        .skill-tag {
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            transition: all 0.2s;
+        }
+        .skill-tag:hover {
+            background: rgba(99, 102, 241, 0.3);
+            border-color: #818cf8;
+        }
+        .timeline-dot {
+            width: 12px;
+            height: 12px;
+            background: #6366f1;
+            border-radius: 50%;
+            position: absolute;
+            left: -6px;
+            top: 24px;
+            box-shadow: 0 0 10px #6366f1;
+        }
+        @keyframes pulse-slow {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.6; }
+        }
+        .bg-glow {
+            position: fixed;
+            width: 40vw;
+            height: 40vw;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+            z-index: -1;
+            animation: pulse-slow 8s infinite ease-in-out;
+        }
+    </style>
+</head>
+<body class="selection:bg-indigo-500/30">
 
-    // Accessibility: open all details on print
-    window.addEventListener('beforeprint', ()=> document.querySelectorAll('details').forEach(d=> d.open=true));
+    <div class="bg-glow top-[-10%] left-[-10%]"></div>
+    <div class="bg-glow bottom-[-10%] right-[-10%] animate-[pulse-slow_12s_infinite]"></div>
 
-    // I18n – proste tłumaczenia UI (zaktualizowane klucze)
-    const dict = {
-      pl: {
-        'hero.role': 'Kandydat na Founders Associate • Automatyzacje AI • GTM i Operacje',
-        'side.summary': 'Profil',
-        'side.summary.text': 'Data‑driven operator z mentalnością foundera: AI automations, GTM i procesy. Zamieniam chaos w strukturę, automatyzuję to, co się da, a resztę upraszczam. Szukam roli Founders Associate, gdzie liczy się szybkość, własność i wynik.',
-        'side.contact': 'Kontakt',
-        'side.skills': 'Kompetencje',
-        'side.languages': 'Języki',
-        'side.certs': 'Edu & Certyfikaty',
-        'exp.title': 'Doświadczenie (0→1, AI, Ops)',
-        'exp.filters.all': 'Wszystko'
-      },
-      en: {
-        'hero.role': 'Founders Associate candidate • AI Automation • GTM & Operations',
-        'side.summary': 'Profile',
-        'side.summary.text': 'Data‑driven operator with founder mindset: AI automations, GTM and operations. I turn chaos into structure, automate what can be automated, and simplify the rest. Looking for a Founders Associate role where speed, ownership and outcomes matter.',
-        'side.contact': 'Contact',
-        'side.skills': 'Skills',
-        'side.languages': 'Languages',
-        'side.certs': 'Education & Certificates',
-        'exp.title': 'Experience (0→1, AI, Ops)',
-        'exp.filters.all': 'All'
-      }
-    };
-    function setLang(l){
-      const map = dict[l] || dict.pl; 
-      document.querySelectorAll('[data-i18n]').forEach(el=>{
-        const key = el.getAttribute('data-i18n');
-        if(map[key]) el.textContent = map[key];
-      });
-      localStorage.setItem('cv-lang', l);
-      document.documentElement.lang = l;
-    }
-    document.getElementById('langPL').addEventListener('click', ()=> setLang('pl'));
-    document.getElementById('langEN').addEventListener('click', ()=> setLang('en'));
-    setLang(localStorage.getItem('cv-lang') || 'pl');
-  </script>
+    <div class="max-w-6xl mx-auto px-6 py-12 lg:py-20">
+        
+        <!-- Header -->
+        <header class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 mb-20">
+            <div>
+                <h1 class="text-5xl lg:text-7xl font-extrabold tracking-tighter mb-4">
+                    IGNACY <span class="gradient-text">URBAŃCZYK</span>
+                </h1>
+                <p class="text-xl lg:text-2xl text-gray-400 font-light max-w-2xl">
+                    AI Strategy & R&D Integration Leader | Automating the Future of Business
+                </p>
+                <div class="flex flex-wrap gap-4 mt-8">
+                    <a href="mailto:ignacyurbanczyk@gmail.com" class="flex items-center gap-2 glass-card px-4 py-2 rounded-xl text-sm hover:text-indigo-400">
+                        <i data-lucide="mail" class="w-4 h-4 text-indigo-400"></i> ignacyurbanczyk@gmail.com
+                    </a>
+                    <a href="tel:+48881653478" class="flex items-center gap-2 glass-card px-4 py-2 rounded-xl text-sm hover:text-indigo-400">
+                        <i data-lucide="phone" class="w-4 h-4 text-indigo-400"></i> +48 881 653 478
+                    </a>
+                    <a href="https://linkedin.com/in/i-urbanczyk" target="_blank" class="flex items-center gap-2 glass-card px-4 py-2 rounded-xl text-sm hover:text-indigo-400">
+                        <i data-lucide="linkedin" class="w-4 h-4 text-indigo-400"></i> linkedin.com/in/i-urbanczyk
+                    </a>
+                    <span class="flex items-center gap-2 glass-card px-4 py-2 rounded-xl text-sm">
+                        <i data-lucide="map-pin" class="w-4 h-4 text-indigo-400"></i> Gdynia, Polska
+                    </span>
+                </div>
+            </div>
+            <div class="hidden lg:block">
+                <div class="w-32 h-32 rounded-3xl gradient-bg flex items-center justify-center shadow-2xl shadow-indigo-500/20 rotate-3">
+                    <span class="text-white text-5xl font-black">IU</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+            
+            <!-- Sidebar / Left Column -->
+            <aside class="lg:col-span-4 space-y-12">
+                
+                <!-- Profile Summary -->
+                <section>
+                    <h3 class="text-indigo-400 uppercase tracking-widest text-xs font-bold mb-6 flex items-center gap-2">
+                        <i data-lucide="user" class="w-4 h-4"></i> Profil
+                    </h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        Strategiczny lider i ekspert AI z doświadczeniem w sektorach Banking & FinTech. Specjalizuję się w transformacji złożonych technologii (GenAI, LLMs, AI Agents) w mierzalną wartość biznesową. Łączę kompetencje Product Ownera z głęboką wiedzą o automatyzacji procesów.
+                    </p>
+                </section>
+
+                <!-- Core Competencies -->
+                <section>
+                    <h3 class="text-indigo-400 uppercase tracking-widest text-xs font-bold mb-6 flex items-center gap-2">
+                        <i data-lucide="zap" class="w-4 h-4"></i> Kluczowe Kompetencje
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="glass-card p-4 rounded-2xl">
+                            <h4 class="font-semibold mb-2">AI Strategy & R&D</h4>
+                            <p class="text-xs text-gray-400">Roadmapy GenAI, wdrażanie Agentów AI, Prompt Engineering.</p>
+                        </div>
+                        <div class="glass-card p-4 rounded-2xl">
+                            <h4 class="font-semibold mb-2">Discovery & Prototyping</h4>
+                            <p class="text-xs text-gray-400">Walidacja hipotez (0→1), Figma, No-code, MVP.</p>
+                        </div>
+                        <div class="glass-card p-4 rounded-2xl">
+                            <h4 class="font-semibold mb-2">Leadership & Agile</h4>
+                            <p class="text-xs text-gray-400">Zarządzanie cross-funkcjonalne, Design Thinking, PSM I.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Tech Stack -->
+                <section>
+                    <h3 class="text-indigo-400 uppercase tracking-widest text-xs font-bold mb-6 flex items-center gap-2">
+                        <i data-lucide="code-2" class="w-4 h-4"></i> Stack Technologiczny
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag">n8n</span>
+                        <span class="skill-tag">Make/Zapier</span>
+                        <span class="skill-tag">Azure DevOps</span>
+                        <span class="skill-tag">Figma</span>
+                        <span class="skill-tag">Power BI</span>
+                        <span class="skill-tag">Office 365</span>
+                        <span class="skill-tag">No-code Apps</span>
+                        <span class="skill-tag">LLMs/GenAI</span>
+                    </div>
+                </section>
+
+                <!-- Education -->
+                <section>
+                    <h3 class="text-indigo-400 uppercase tracking-widest text-xs font-bold mb-6 flex items-center gap-2">
+                        <i data-lucide="graduation-cap" class="w-4 h-4"></i> Edukacja & Certyfikaty
+                    </h3>
+                    <div class="space-y-4">
+                        <div>
+                            <p class="font-bold">Licencjat z Ekonomii</p>
+                            <p class="text-sm text-gray-400">Akademia Leona Koźmińskiego</p>
+                        </div>
+                        <div class="flex flex-col gap-1">
+                            <span class="text-sm bg-indigo-500/10 text-indigo-300 px-3 py-1 rounded-lg w-fit">PSM I</span>
+                            <span class="text-sm bg-purple-500/10 text-purple-300 px-3 py-1 rounded-lg w-fit">PRINCE2® Practitioner</span>
+                            <span class="text-sm bg-blue-500/10 text-blue-300 px-3 py-1 rounded-lg w-fit">AI & Automation Specialist</span>
+                        </div>
+                    </div>
+                </section>
+            </aside>
+
+            <!-- Main Content / Right Column -->
+            <main class="lg:col-span-8">
+                
+                <h3 class="text-indigo-400 uppercase tracking-widest text-xs font-bold mb-10 flex items-center gap-2">
+                    <i data-lucide="briefcase" class="w-4 h-4"></i> Doświadczenie Zawodowe
+                </h3>
+
+                <div class="space-y-12 border-l border-gray-800 ml-2 relative">
+                    
+                    <!-- Accenture 1 -->
+                    <div class="pl-8 relative">
+                        <div class="timeline-dot"></div>
+                        <span class="text-sm font-bold text-indigo-400">Lipiec 2023 – Czerwiec 2025</span>
+                        <h4 class="text-2xl font-bold mt-1">AI Product Owner & Automation Lead</h4>
+                        <p class="text-gray-400 mb-4 font-semibold uppercase tracking-wider text-sm">ACCENTURE</p>
+                        <ul class="space-y-3 text-gray-300">
+                            <li class="flex gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-indigo-500 flex-shrink-0"></i>
+                                <span><strong>AI Agent Implementation:</strong> Wdrożenie Agentów AI dla bankowości – redukcja czasu procesów decyzyjnych o <strong>20%</strong>.</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-indigo-500 flex-shrink-0"></i>
+                                <span><strong>GenAI Roadmap:</strong> Strategia rozwoju wewnętrznych narzędzi opartych na LLMs, przekładanie wizji na techniczny backlog.</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-indigo-500 flex-shrink-0"></i>
+                                <span><strong>UX & Accuracy:</strong> Prompt Engineering podniósł dokładność chatbotów o <strong>12%</strong> wskaźnika satysfakcji (KPI).</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Accenture 2 -->
+                    <div class="pl-8 relative">
+                        <div class="timeline-dot"></div>
+                        <span class="text-sm font-bold text-indigo-400">Maj 2022 – Czerwiec 2023</span>
+                        <h4 class="text-2xl font-bold mt-1">Scrum Master & Agile Delivery Lead</h4>
+                        <p class="text-gray-400 mb-4 font-semibold uppercase tracking-wider text-sm">ACCENTURE</p>
+                        <ul class="space-y-3 text-gray-300">
+                            <li class="flex gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-indigo-500 flex-shrink-0"></i>
+                                <span><strong>System Transformation:</strong> Refaktoryzacja systemów bankowych – wzrost tempa wydań o <strong>25%</strong> w 6 miesięcy.</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-indigo-500 flex-shrink-0"></i>
+                                <span><strong>Process Efficiency:</strong> Value Stream Mapping pozwolił na redukcję lead time o <strong>30%</strong>.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- IGI.STUDIO -->
+                    <div class="pl-8 relative">
+                        <div class="timeline-dot"></div>
+                        <span class="text-sm font-bold text-indigo-400">Kwiecień 2025 – Obecnie</span>
+                        <h4 class="text-2xl font-bold mt-1">Founder & Automation Architect</h4>
+                        <p class="text-gray-400 mb-4 font-semibold uppercase tracking-wider text-sm">IGI.STUDIO</p>
+                        <p class="text-gray-300">Dostarczanie kompleksowych rozwiązań AI Chatbots i workflow automation dla sektora SMB. Generowanie oszczędności rzędu 20+ godzin miesięcznie na wdrożenie.</p>
+                    </div>
+
+                    <!-- CHILLTENT -->
+                    <div class="pl-8 relative">
+                        <div class="timeline-dot"></div>
+                        <span class="text-sm font-bold text-indigo-400">2018 – Obecnie</span>
+                        <h4 class="text-2xl font-bold mt-1">Co-Founder & Product Lead</h4>
+                        <p class="text-gray-400 mb-4 font-semibold uppercase tracking-wider text-sm">CHILLTENT & SEAHANDS</p>
+                        <p class="text-gray-300">Skalowanie dwóch marek usługowych od zera. Osiągnięcie <strong>250% ROI</strong> dla MVP dzięki szybkiej walidacji rynkowej i lean operations.</p>
+                    </div>
+
+                </div>
+
+                <!-- Languages Section (Inline for Main Content) -->
+                <section class="mt-20">
+                    <h3 class="text-indigo-400 uppercase tracking-widest text-xs font-bold mb-8 flex items-center gap-2">
+                        <i data-lucide="globe" class="w-4 h-4"></i> Języki
+                    </h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="glass-card p-6 rounded-3xl flex justify-between items-center">
+                            <span class="font-bold text-lg">Polski</span>
+                            <span class="text-indigo-400 font-bold uppercase tracking-tighter text-sm">Ojczysty</span>
+                        </div>
+                        <div class="glass-card p-6 rounded-3xl flex justify-between items-center">
+                            <span class="font-bold text-lg">Angielski</span>
+                            <span class="text-indigo-400 font-bold uppercase tracking-tighter text-sm">C1 Fluent</span>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <footer class="mt-32 pt-8 border-t border-gray-900 text-center text-gray-600 text-sm">
+            <p>&copy; 2025 Ignacy Urbańczyk. Built with AI Synergy.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
 </body>
 </html>
